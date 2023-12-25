@@ -1,6 +1,6 @@
-function increment(num: number) {
-    //                 ^^^^^^^^型注釈
-      return num + 1;
-    }
-     
-    console.log(increment(999));
+class User {
+    constructor( public name: string) {}
+  }
+  
+  const u = new User("taro");
+  console.log(u.name);
