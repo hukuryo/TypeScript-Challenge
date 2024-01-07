@@ -4,8 +4,8 @@ interface Todo {
   completed: boolean;
 }
 
-type MyPick<T, K extends string | number | symbol> = {
-  [k in K]: k extends keyof T ? T[k] : never;
+type MyPick<T, K extends keyof T | string | number | symbol> = {
+  [P in K]: P extends keyof T ? T[P] : never;
 };
 
 type TodoPreview = MyPick<Todo, "title" | "completed">;
