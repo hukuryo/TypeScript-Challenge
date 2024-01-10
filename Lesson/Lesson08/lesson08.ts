@@ -1,4 +1,4 @@
 type MyAwaited<T> = T extends Promise<infer R> ? R : never;
 type ExampleType = Promise<string>;
 
-type Result = MyAwaited<ExampleType>; // string
+type Result2 = MyAwaited<ExampleType>; // string
