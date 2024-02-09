@@ -1,6 +1,7 @@
 type P = Partial<{
   name: string;
   age: number;
+  adress: string
 }>;
 
 // Tは{
@@ -17,6 +18,7 @@ console.log(partialPerson.age); // => undefined
 
 partialPerson.name = "Alice";
 partialPerson.age = 30;
+partialPerson.adress = undefined;
 
 console.log(partialPerson.name); // => "Alice"
 console.log(partialPerson.age); // => 30
