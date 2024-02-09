@@ -1,25 +1,20 @@
-type Q<T> = Pick<
-  {
-    name: string;
-    age: T;
-    adress: string
-  },
+type Human = {
+  name: string;
+  age: number;
+  adress: string
+}
+
+type Q = Pick<
+  Human,
   "age" | "adress"
 >;
 
 type O = Pick<
-  {
-    name: string;
-    age: number;
-  },
+  Human,
   "age" | "name"
 >;
 
-// Qは{
-//  age: number;
-// }
-
-const objQ: Q<number> = {
+const objQ: Q = {
   age: 10,
   adress: "sample"
 };
@@ -28,8 +23,3 @@ const obj: O = {
   name: "sato",
   age: 40,
 };
-
-// エラー: 'name' プロパティは存在しません
-// obj.name = "Alice";
-
-console.log(obj.age); // => 40
