@@ -1,9 +1,10 @@
-type Q = Pick<
+type Q<T> = Pick<
   {
     name: string;
-    age: number;
+    age: T;
+    adress: string
   },
-  "age"
+  "age" | "adress"
 >;
 
 type O = Pick<
@@ -18,8 +19,9 @@ type O = Pick<
 //  age: number;
 // }
 
-const objQ: Q = {
-  age: 30,
+const objQ: Q<number> = {
+  age: 10,
+  adress: "sample"
 };
 
 const obj: O = {
